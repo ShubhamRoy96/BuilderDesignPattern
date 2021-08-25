@@ -9,9 +9,9 @@ namespace Builder
             Console.WriteLine("Welcome to Wac Donals!\n");
 
             Director director = new();
-
+            Product finalProduct = new();
             #region Efficient way without code repetition
-            //List<BuilderBase> _builderBases = new List<BuilderBase>()
+            //System.Collections.Generic.List<BuilderBase> _builderBases = new System.Collections.Generic.List<BuilderBase>()
             //{
             //    new BurgerBuilder(),
             //    new FriesBuilder(),
@@ -21,22 +21,27 @@ namespace Builder
             //foreach (BuilderBase builder in _builderBases)
             //{
             //    director.PlaceOrder(builder);
-            //    builder.GetResult().Show();
-            //} 
+            //    finalProduct = builder.GetFinalProduct();
+            //    finalProduct.ShowProductDetails();
+            //}
             #endregion
 
             BuilderBase burgerBuilder = new BurgerBuilder();
             director.PlaceOrder(burgerBuilder);
-            burgerBuilder.GetResult().Show();
+            finalProduct = burgerBuilder.GetFinalProduct();
+            finalProduct.ShowProductDetails();
+
 
 
             BuilderBase friesBuilder = new FriesBuilder();
             director.PlaceOrder(friesBuilder);
-            friesBuilder.GetResult().Show();
+            finalProduct = friesBuilder.GetFinalProduct();
+            finalProduct.ShowProductDetails();
 
             BuilderBase drinksBuilder = new DrinksBuilder();
             director.PlaceOrder(drinksBuilder);
-            drinksBuilder.GetResult().Show();
+            finalProduct = drinksBuilder.GetFinalProduct();
+            finalProduct.ShowProductDetails();
         }
     }
 }

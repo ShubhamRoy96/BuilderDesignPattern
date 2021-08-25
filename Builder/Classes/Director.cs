@@ -3,6 +3,6 @@
     internal void PlaceOrder(BuilderBase builder)
     {
         builder.AddIngredients();
-        builder.GetResult();
+        builder.GetFinalProduct();
     }
 }

@@ -6,7 +6,8 @@ class DrinksBuilder : BuilderBase
 
     public DrinksBuilder()
     {
-        _product = new Product("Drink");
+        _product = new Product();
+        _product.AddProductTitle("Drink");
     }
 
     internal override void AddIngredients()
@@ -23,7 +24,7 @@ class DrinksBuilder : BuilderBase
         }
     }
 
-    internal override Product GetResult()
+    internal override Product GetFinalProduct()
     {
         return _product;
     }

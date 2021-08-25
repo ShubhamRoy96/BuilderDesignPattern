@@ -6,7 +6,8 @@ class FriesBuilder : BuilderBase
 
     public FriesBuilder()
     {
-        _product = new Product("Fries");
+        _product = new Product();
+        _product.AddProductTitle("Fries");
     }
 
     internal override void AddIngredients()
@@ -24,7 +25,7 @@ class FriesBuilder : BuilderBase
         }
     }
 
-    internal override Product GetResult()
+    internal override Product GetFinalProduct()
     {
         return _product;
     }

@@ -4,12 +4,16 @@ using System.Collections.Generic;
 class Product
 {
     readonly List<string> _ingredients;
-    string _ProductTitle;
+    string _productTitle;
 
-    public Product(string ProductTitle)
+    public Product()
     {
         _ingredients = new List<string>();
-        _ProductTitle = ProductTitle;
+    }
+
+    internal void AddProductTitle(string Title)
+    {
+        _productTitle = Title;
     }
 
     internal void Add(string Ingredient)
@@ -17,9 +21,9 @@ class Product
         _ingredients.Add(Ingredient);
     }
 
-    internal void Show()
+    internal void ShowProductDetails()
     {
-        Console.WriteLine("Product : {0}", _ProductTitle);
+        Console.WriteLine("Product : {0}", _productTitle);
         Console.WriteLine("Ingredients : ");
         foreach (string ingredient in _ingredients)
         {

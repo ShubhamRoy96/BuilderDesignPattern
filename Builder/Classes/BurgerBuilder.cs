@@ -6,7 +6,8 @@ class BurgerBuilder : BuilderBase
 
     public BurgerBuilder()
     {
-        _product = new Product("Burger");
+        _product = new Product();
+        _product.AddProductTitle("Burger");
     }
 
     internal override void AddIngredients()
@@ -25,7 +26,7 @@ class BurgerBuilder : BuilderBase
         }
     }
 
-    internal override Product GetResult()
+    internal override Product GetFinalProduct()
     {
         return _product;
     }
